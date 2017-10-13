@@ -1,3 +1,3 @@
 # JavaRecall
-jean-philippe
-ce JavaRecall est vide puisque je suis reparti de zero sur eclipse, je vais essayé de refaire des push dans le week end au fur et à mesure de mon avancement sur les exercices tdd.
+##jean-philippe
+ 13/10/2017 20:20 premier push apres restauration eclipse et quelques fonctions resolues.
