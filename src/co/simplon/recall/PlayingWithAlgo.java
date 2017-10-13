@@ -2,6 +2,7 @@ package co.simplon.recall;
 
 import java.util.*;
 
+
 public class PlayingWithAlgo {
 	
 	public static String helloWorld(String name) {
@@ -44,7 +45,16 @@ public class PlayingWithAlgo {
 	}
 
 	public static String getFirstHalf(String string) {
-		return null;
+		
+		double longueur = string.length();
+		double halfL = longueur/2;
+		
+		int halfRound = (int) Math.round(halfL);
+		int half = halfRound;
+		
+		String firstHalf = string.substring(0,half);
+		
+		return firstHalf;
 	}
 
 	public static String exportWordWithoutALetter(String array[], char letter) {
@@ -100,11 +110,13 @@ public class PlayingWithAlgo {
 	}
 	
 	public static long addingTwoNumbers(long number1, long number2) {
-		return 0;
+		long resultat = number1 + number2 ;
+		return resultat;
 	}
 
 	public static long addingThreeNumbers(long number1, long number2, long number3) {
-		return 0;
+		long resultat = number1 + number2 + number3;
+		return resultat;
 	}
 
 	public static long addingSeveralNumbers(final long... numbers) {
@@ -144,7 +156,10 @@ public class PlayingWithAlgo {
 	}
 	
 	public static int roundUp(float number) {
-		return 0;
+		
+		float rounded =(int) Math.round(number);
+		
+		return (int) rounded;
 	}
 
 	public static int findLastDayOfMonth(int month, int year) {
@@ -160,18 +175,36 @@ public class PlayingWithAlgo {
 	}
 	
 	public static boolean checkIfPair(int number) {
+		if(number%2 == 0)
+		{
+			return true;
+			
+		}
 		return false;
 	}
 	
 	public static boolean checkIfPairPairImpair(int number1, int number2, int number3) {
+		if( (number1%2 == 0) && (number2%2 == 0) && (number3%2 !=0) ) {
+			return true;
+		}
 		return false;
 	}
 	
 	public static boolean checkIfSumIsPair(int number1, int number2, int number3) {
+		if ((number1 + number2 + number3)%2 == 0) {
+			return true;
+		}
 		return false;
 	}
 	
 	public static boolean checkIfAllElementsPair(int[] array) {
+		/*for(int i = 0 ; i<array.length; i++) {                       ne fait pas les iterations
+			
+			if(array[i]%2 == 0)
+			{
+				return true;
+			}
+		}*/
 		return false;
 	}
 	
@@ -188,26 +221,57 @@ public class PlayingWithAlgo {
 	}
 	
 	public static boolean checkSiTuPeuxAcheter(int prix) {
+		if (prix < 22 && prix%2 ==0)
+		{
+			return true;
+		
+		}
 		// t'as 22 euros en monnaies de 2 euros, la machine ne rend pas de monnaie, check si tu peux payer
 		return false;
 	}
 	
 	public static boolean checkCase1(double prix, int pourcentDeRemise) {
+		
+		double prixAvecRemise = prix - prix*pourcentDeRemise/100;
+		if ( prixAvecRemise <=100) {
+			return true;
+		}
 		// t'as 100 euros, verifie si tu peux acheter l'article solde
 		return false;
 	}
 	
 	public static boolean checkCase2(int number1, int number2) {
+		if( number1 % 7 == 0 || number2 % 7 == 0 || (number1 + number2)%7 ==0 ) 
+		{
+			return true;
+		}
+			
 		// check si une de 2 chiffres, ou leur somme se divise par 7
 		return false;
 	}
 	
 	public static boolean checkCase2a(int number1, int number2) {
+		if ((number1 + number2)%7!=0) 
+		{
+			return true;	
+		}
+		else if  (number1 % 7 == 0 || number2 % 7 == 0)
+		{
+			return false;			
+		}
 		// check si une de 2 chiffres mais pas leur somme se divise par 7
 		return false;
 	}
 	
 	public static boolean checkCase3(int number1, int number2, int number3) {
+		if (number1 > number2 && number2 > number3)
+		{
+			return true;		
+		}
+		else if( number1 < number2 && number2 < number3)
+		{
+			return true;
+		}
 		// check si les trois chiffres sont dans l'ordre, soit croissant ou decroissant
 		return false;
 	}
